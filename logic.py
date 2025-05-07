@@ -143,7 +143,7 @@ class SnakeGame:
 
         self.clear_window()  # Clear the main menu
 
-        # Add a label to display the player's score and lives
+        # Add a label to display the player's score and Health
         self.label = tk.Label(self.root, text="", font=('consolas', 16))
         self.label.pack()
 
@@ -261,7 +261,7 @@ class SnakeGame:
                 return
 
         self.lives = len(self.snake.coordinates)
-        self.label.config(text=f"{self.player_name} - Score: {self.score} | Lives: {self.lives}")
+        self.label.config(text=f"{self.player_name} - Score: {self.score} | Health: {self.lives}")
         self.root.after(SPEED, self.next_turn)
 
     def check_collisions(self):
@@ -403,7 +403,7 @@ class SnakeGame:
             "- Use the arrow keys to move the snake.\n"
             "- Eat the pink food to grow and score points.\n"
             "- Avoid running into walls or yourself.\n"
-            "- You lose a 'life' (body segment) on collision.\n"
+            "- You lose 'Health' (body segment) on collision.\n"
             "- The game ends when no segments remain.\n"
             "- Pause the game anytime using the Pause button.\n"
             "- Your score and name will appear on the leaderboard.\n"
